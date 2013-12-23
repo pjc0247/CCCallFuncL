@@ -8,6 +8,10 @@
 
 NS_CC_BEGIN
 
+typedef std::function<void()> SEL_CallFuncL;
+
+#define callfuncL_selector [=]()
+
 class CCCallFuncL : public CCActionInstant //<NSCopying>
 {
 public:
@@ -17,9 +21,9 @@ public:
     }
     virtual ~CCCallFuncL();
 
-    static CCCallFuncL * create( std::function<void()> f );
+	static CCCallFuncL * create( SEL_CallFuncL f );
 
-	virtual bool initWithFunction( std::function<void()> f );
+	virtual bool initWithFunction( SEL_CallFuncL f );
     
     virtual void execute();
     
@@ -28,7 +32,7 @@ public:
     CCObject * copyWithZone(CCZone *pZone);
 
 protected:    
-	std::function<void()> m_pFunc;
+	SEL_CallFuncL m_pFunc;
 };
 
 NS_CC_END
