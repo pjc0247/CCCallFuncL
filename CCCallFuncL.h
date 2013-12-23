@@ -21,9 +21,9 @@ public:
     }
     virtual ~CCCallFuncL();
 
-	static CCCallFuncL * create( SEL_CallFuncL f );
+    static CCCallFuncL * create( SEL_CallFuncL f );
 
-	virtual bool initWithFunction( SEL_CallFuncL f );
+    virtual bool initWithFunction( SEL_CallFuncL f );
     
     virtual void execute();
     
