@@ -1,0 +1,4 @@
+CCCallFuncL
+===========
+
+CCCallFunc with lambda
