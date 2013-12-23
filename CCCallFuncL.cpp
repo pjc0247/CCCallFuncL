@@ -3,7 +3,7 @@
 using namespace cocos2d;
 using namespace std;
 
-CCCallFuncL * CCCallFuncL::create( function<void()> f ){
+CCCallFuncL * CCCallFuncL::create( SEL_CallFuncL f ){
     CCCallFuncL *pRet = new CCCallFuncL();
 	if (pRet && pRet->initWithFunction(f)) {
         pRet->autorelease();
@@ -13,7 +13,7 @@ CCCallFuncL * CCCallFuncL::create( function<void()> f ){
     return NULL;
 }
 
-bool CCCallFuncL::initWithFunction( function<void()> f ) {
+bool CCCallFuncL::initWithFunction( SEL_CallFuncL f ) {
 	this->m_pFunc = f;
     return true;
 }
