@@ -2,3 +2,20 @@ CCCallFuncL
 ===========
 
 CCCallFunc with lambda
+
+
+Example
+----
+
+```C++
+a = 1;
+
+this->runAction(
+	CCSequence::create(
+		CCDelayTime::create(1),
+		CCCallFuncL::create( [&](){
+				printf(" d %d ", a);
+				a ++;
+			}),
+		NULL));
+```
