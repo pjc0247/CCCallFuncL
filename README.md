@@ -13,7 +13,7 @@ a = 1;
 this->runAction(
 	CCSequence::create(
 		CCDelayTime::create(1),
-		CCCallFuncL::create( [&](){
+		CCCallFuncL::create( callfuncL_selector{
 				printf(" d %d ", a);
 				a ++;
 			}),
